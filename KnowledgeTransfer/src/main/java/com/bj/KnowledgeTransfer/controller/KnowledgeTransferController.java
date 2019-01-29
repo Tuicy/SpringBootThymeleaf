@@ -1,6 +1,5 @@
 package com.bj.KnowledgeTransfer.controller;
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -38,7 +37,7 @@ public class KnowledgeTransferController {
 		return "menu";
 	}
 
-	@RequestMapping(value= "/topics", method = RequestMethod.GET)
+	@RequestMapping(value = "/topics", method = RequestMethod.GET)
 	public String getTopics(Model model) {
 
 		List<TopicModel> myTopics = knowledgeTransferServiceImpl.getAllTopics();
@@ -49,8 +48,8 @@ public class KnowledgeTransferController {
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public String initiateEdit(@ModelAttribute("topic") TopicModel topicModel, final Model model) {
 
-		System.out.println("THIS IS A TEST!!!" + topicModel.getMainTopic());
-		System.out.println("THIS IS A TEST!!!" + topicModel.getId());
+		System.out.println("THIS IS A TEST!!! Topic:" + topicModel.getMainTopic());
+		System.out.println("THIS IS A TEST!!! Id: " + topicModel.getId());
 
 		model.addAttribute("topics", topicModel);
 		System.out.println(topicModel.toString());
@@ -58,19 +57,30 @@ public class KnowledgeTransferController {
 		return "menu";
 
 	}
-	
+
 	@RequestMapping(value = "/viewTopic/{id}", method = RequestMethod.GET)
 	public String initiateEdit(@PathVariable String id, Model model) {
 
 		System.out.println("THIS IS A TEST!!!" + id);
-		
+
 		TopicModel myTopic = knowledgeTransferServiceImpl.getTopic(id);
-		
+
 		model.addAttribute("topicsInd", myTopic);
 		System.out.println(myTopic.getMainTopic());
 		return "topic";
 
 	}
 
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public String initiateModify(@ModelAttribute("topic") TopicModel topicModel, final Model model) {
+
+		System.out.println("Passing ID from client as " + topicModel.getId());
+		// System.out.println("topicModel : "+topicModel.toString());
+		TopicModel myTopic = knowledgeTransferServiceImpl.getTopic(topicModel.getId());
+
+		model.addAttribute("topicsInd", myTopic);
+		return "topic";
+
+	}
 
 }

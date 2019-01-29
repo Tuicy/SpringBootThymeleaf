@@ -42,19 +42,19 @@
 			<td th:utext="${topic.date}">...</td>
 			<td th:utext="${topic.status}">...</td>
 			<td>
-				<!-- <form ACTION="#" th:action="@{/edit}" th:object="${topic}"
+				<form ACTION="#" th:action="@{/modify}" th:object="${topic}"
 					method="POST">
-					<input type="hidden" th:value="${topic.id}" />
-					    <input type="hidden" th:field="${id}" />
+					<input type="hidden" th:name="id" th:value="*{id}" />
+
  
 					<button type="submit">Submit</button>
 				
 				</form>
-				 -->
-				<button type="submit">
+				
+				<!-- <button type="submit">
 					<a th:href="@{'/viewTopic/' + ${topic.id}}"> <span>View</span>
 					</a>
-				</button>
+				</button> -->
 			</td>
 
 		</tr>

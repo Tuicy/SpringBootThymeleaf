@@ -19,13 +19,13 @@ public class TopicDAO {
 	}
 
 	private static void initData() {
-		TopicModel mytopic1 = new TopicModel("1", "topic 1", "topic desc 1", "trainer 1", "lead 1", "2019-01-02",
+		TopicModel mytopic1 = new TopicModel("0", "topic 1", "topic desc 1", "trainer 1", "lead 1", "2019-01-02",
 				"Done");
-		TopicModel mytopic2 = new TopicModel("2", "topic 2", "topic desc 2", "trainer 2", "lead 2", "2019-01-02",
+		TopicModel mytopic2 = new TopicModel("1", "topic 2", "topic desc 2", "trainer 2", "lead 2", "2019-01-02",
 				"Done");
-		TopicModel mytopic3 = new TopicModel("3", "topic 3", "topic desc 3", "trainer 3", "lead 3", "2019-01-02",
+		TopicModel mytopic3 = new TopicModel("2", "topic 3", "topic desc 3", "trainer 3", "lead 3", "2019-01-02",
 				"Not Done");
-		TopicModel mytopic4 = new TopicModel("4", "topic 4", "topic desc 4", "trainer 4", "lead 4", "2019-01-02",
+		TopicModel mytopic4 = new TopicModel("3", "topic 4", "topic desc 4", "trainer 4", "lead 4", "2019-01-02",
 				"Done");
 
 		TOPIC_MAPS.put(mytopic1.getId(), mytopic1);
