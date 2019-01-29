@@ -21,7 +21,11 @@ public class TopicDAO {
 	private static void initData() {
 		TopicModel mytopic1 = new TopicModel("0", "topic 1", "topic desc 1", "trainer 1", "lead 1", "2019-01-02",
 				"Done");
-		TopicModel mytopic2 = new TopicModel("1", "topic 2", "topic desc 2", "trainer 2", "lead 2", "2019-01-02",
+		TopicModel mytopic2 = new TopicModel("1", "topic 2", "topic desc 2"
+				+ "is somasdas"
+				+ "asdasdasdas </br>"
+				+ "aDSasaS"
+				+ "SADASD </br>", "trainer 2", "lead 2", "2019-01-02",
 				"Done");
 		TopicModel mytopic3 = new TopicModel("2", "topic 3", "topic desc 3", "trainer 3", "lead 3", "2019-01-02",
 				"Not Done");

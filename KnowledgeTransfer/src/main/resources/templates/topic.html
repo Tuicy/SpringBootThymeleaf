@@ -2,29 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title th:utext="${title}"></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
-<style>
-      table th, table td {
-	padding: 5px;
-	      
-}
-
-      .message {
-	color: blue;
-	      
-}
-   
-</style>
 <body>
-	       
+	   	       
+<div class="container">    
 	<!-- Include _menu.html -->
-	      
+	<!--       
 	<th:block th:include="/menu"></th:block>
-	        
+	 -->        
 	<h2>Projects</h2>
 	   
-	<table border="1">
+	<table border="1" class="table table-hover">
 		<tr>
 			<th>Topic</th>
 			<th>Descriptions</th>
@@ -32,6 +25,7 @@
 			<th>Lead</th>
 			<th>Date</th>
 			<th>Status</th>
+			
 		</tr>
 
 		<tr th:each="topic : ${topicsInd}">
@@ -42,24 +36,10 @@
 			<td th:utext="${topic.lead}">...</td>
 			<td th:utext="${topic.date}">...</td>
 			<td th:utext="${topic.status}">...</td>
-			<td>
-				<!-- <form ACTION="#" th:action="@{/edit}" th:object="${topic}"
-					method="POST">
-					<input type="hidden" th:value="${topic.id}" />
-					    <input type="hidden" th:field="${id}" />
- 
-					<button type="submit">Submit</button>
-				
-				</form>
-				 -->
-				<!-- <button type="submit">
-					<a th:href="@{'/viewTopic/' + ${topic.id}}"> <span>View</span>
-					</a>
-				</button> -->
-			</td>
+			
 
 		</tr>
 	</table>
-	       
+	</div>       
 </body>
 </html>

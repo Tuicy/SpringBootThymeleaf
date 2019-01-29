@@ -34,7 +34,7 @@ public class KnowledgeTransferController {
 	@RequestMapping("/")
 	public String viewDefault() {
 
-		return "menu";
+		return "redirect:/topics";
 	}
 
 	@RequestMapping(value = "/topics", method = RequestMethod.GET)
