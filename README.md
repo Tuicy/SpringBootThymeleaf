@@ -1,3 +1,3 @@
 # SpringBootThymeleaf
 
-A sample simpring boot app with Thymeleaf 
+A sample springboot app with Thymeleaf 
